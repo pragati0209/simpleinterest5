@@ -1,17 +1,23 @@
 import sys
 
-# Check whether correct number of arguments are passed or not
-if len(sys.argv) != 4:
-    print("Usage: python simple_interest.py <principal> <rate> <time>")
-    sys.exit(1)
-
-# Reading values from command line arguments
-principal = float(sys.argv[1])
-rate = float(sys.argv[2])
-time = float(sys.argv[3])
+# Check if command-line arguments are given
+if len(sys.argv) == 4:
+    script_name = sys.argv[0]
+    p = float(sys.argv[1])
+    r = float(sys.argv[2])
+    t = float(sys.argv[3])
+else:
+    script_name = sys.argv[0]
+    p = 10000
+    r = 10
+    t = 2
+    print("No input given – using default values")
 
 # Calculate Simple Interest
-simple_interest = (principal * rate * time) / 100
+si = (p * r * t) / 100
 
-# Display result
-print("Simple Interest is:", simple_interest)
+print("Script Name:", script_name)
+print("Principal Amount:", p)
+print("Rate of Interest:", r)
+print("Time:", t)
+print("Simple Interest:", si)
